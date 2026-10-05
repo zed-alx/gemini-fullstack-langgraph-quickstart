@@ -16,6 +16,7 @@ services:
     environment:
       POSTGRES_DB: postgres
       POSTGRES_USER: postgres
+      # Read from .env so no credential is committed to the repository.
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
     volumes:
       - langgraph-data:/var/lib/postgresql/data
